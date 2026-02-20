@@ -1,6 +1,19 @@
 import Image from 'next/image'
 
 export default function UserProfile({ user }) {
+  // Extract LinkedIn URL from bio or blog
+  const getLinkedInUrl = () => {
+    const bioMatch = user.bio?.match(/https?:\/\/(www\.)?linkedin\.com\/in\/\S+/i);
+    if (bioMatch) return bioMatch[0];
+    
+    if (user.blog?.includes('linkedin.com')) {
+      return user.blog.startsWith('http') ? user.blog : `https://${user.blog}`;
+    }
+    return null;
+  };
+
+  const linkedInUrl = getLinkedInUrl();
+
   return (
     <div>
       <div className="profile-header">
@@ -16,7 +29,16 @@ export default function UserProfile({ user }) {
           <p className="profile-username">@{user.login}</p>
           {user.bio && <p className="profile-bio">{user.bio}</p>}
           {user.location && <p className="profile-bio">📍 {user.location}</p>}
-          {user.blog && (
+          {linkedInUrl && (
+            <p className="profile-bio">
+              💼 <a href={linkedInUrl}
+                   target="_blank"
+                   rel="noopener noreferrer">
+                LinkedIn Profile
+              </a>
+            </p>
+          )}
+          {user.blog && !linkedInUrl && (
             <p className="profile-bio">
               🔗 <a href={user.blog.startsWith('http') ? user.blog : `https://${user.blog}`}
                    target="_blank"

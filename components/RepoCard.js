@@ -28,7 +28,13 @@ export default function RepoCard({ repo }) {
         )}
 
         <div className="repo-stats">
-          {repo.language && <span className="language-badge">{repo.language}</span>}
+          {repo.languages && repo.languages.length > 0 ? (
+            repo.languages.map((language) => (
+              <span key={language} className="language-badge">{language}</span>
+            ))
+          ) : (
+            repo.language && <span className="language-badge">{repo.language}</span>
+          )}
           <span className="repo-stat">★ {repo.stargazers_count}</span>
           <span className="repo-stat">⎇ {repo.forks_count}</span>
         </div>
