@@ -10,3 +10,8 @@ node_modules/
 # logs
 npm-debug.log*
 yarn-debug.log*
+
+#config
+jsconfig.json
+next.config.js
+package.json
