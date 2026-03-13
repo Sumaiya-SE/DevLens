@@ -70,9 +70,6 @@ Devlens/
 │   ├── UserProfile.js     # Profile card (avatar, bio, stats)
 │   ├── RepoCard.js        # Individual repository card
 │   └── LanguageStats.js   # Language breakdown display
-├── next.config.js
-├── jsconfig.json
-├── package-lock.json
 └── package.json
 
 ```
@@ -105,8 +102,9 @@ This project uses the public [GitHub REST API](https://docs.github.com/en/rest) 
 
 ## 👤 Author
 
-- GitHub: [@Sumaiya-SE](https://github.com/Sumaiya-SE)
+- GitHub: [@Sumaiya](https://github.com/Sumaiya-SE)
+- LinkedIn: [@Sumaiya-Shahudheen](https://www.linkedin.com/in/sumaiya-shahudheen/)
 
 ---
 
-⭐ If you found this useful, consider giving it a star!
+⭐ If you found this useful, consider giving it a star and connect me through LinkedIn!
